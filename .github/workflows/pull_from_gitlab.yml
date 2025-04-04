@@ -14,11 +14,22 @@ jobs:
       DISCORD_MANGA_WEBHOOK_URL: ${{ secrets.DISCORD_MANGA_WEBHOOK_URL }}
       DISCORD_MANWHA_WEBHOOK_URL: ${{ secrets.DISCORD_MANWHA_WEBHOOK_URL }}
       DISCORD_ANIME_WEBHOOK_URL: ${{ secrets.DISCORD_ANIME_WEBHOOK_URL }}
+
     steps:
-      - name: Setup Python
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧪 Debug – Liste du dossier `.github/scripts/`
+        run: |
+          echo "Contenu de .github/scripts :"
+          ls -l .github/scripts || echo "❌ Dossier scripts introuvable"
+          echo "Contenu global du repo :"
+          find . -type f
+
+      - name: 🐍 Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
-      - name: Pull & Run scraper
+      - name: 🚀 Pull & Run scraper
         run: bash .github/scripts/pull_and_run.sh
