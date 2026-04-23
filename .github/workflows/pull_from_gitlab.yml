@@ -2,7 +2,7 @@ name: Pull & Run from GitLab
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # Toutes les heures
+    - cron: "*/30 * * * 4,5" 
   workflow_dispatch:
 
 jobs:
