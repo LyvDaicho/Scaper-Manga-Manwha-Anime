@@ -21,7 +21,7 @@ else
   echo "📝 Changements détectés. Commit & push vers GitLab..."
   git config user.name "GitHub Scraper Bot"
   git config user.email "bot@scraper.com"
-  git add data/manga_series.yaml data/anime_series.yaml
+  git add data/manga_series.yaml
   git commit -m "🔄 MAJ automatique via GitHub Actions"
   git push https://oauth2:${GITLAB_TOKEN}@${GITLAB_LINK}
 fi
