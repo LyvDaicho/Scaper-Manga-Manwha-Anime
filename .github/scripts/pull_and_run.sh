@@ -11,7 +11,6 @@ pip install -r requirements.txt
 
 echo "🚀 Lancement du scraper manga + anime"
 python scripts/manga_scraper.py
-python scripts/anime_scraper.py
 
 echo "🔍 Vérification des modifications sur les fichiers de séries"
 
